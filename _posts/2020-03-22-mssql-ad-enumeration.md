@@ -41,7 +41,7 @@ Let's assume we have no knowledge of the domain name, we just happened to discov
 
 ### Step 2. Find out the SID of the domain
 
-With knowledge of the domain name, we can then inject a query using a known built-in account or group to attain the SID value. Without any kind of typecasting, this returns a binary value, so we wrap it with `sys.fn_varbintohexstr` to make it something we can actually parse easily in the HTTP response.
+With knowledge of the domain name, we can then inject a query using a known built-in account or group (the following example just uses the `Administrator` account) to attain the SID value. Without any kind of typecasting, this returns a binary value, so we wrap it with `sys.fn_varbintohexstr` to make it something we can actually parse easily in the HTTP response.
 
 ```
 ' union select 1,1,(select sys.fn_varbintohexstr(SUSER_SID('{domain}\Administrator')))--
