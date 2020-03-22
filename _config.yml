@@ -1,0 +1,8 @@
+title: An Utsusemi of Keramas
+description: Tales of security research, penetration testing, red teaming, and general hacking shenanigans. 
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-hacker
+plugins: 
+  - jekyll-paginate
+paginate: 5

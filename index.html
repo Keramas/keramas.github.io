@@ -1,1 +1,15 @@
-Temp
+---
+layout: default
+title: Home
+---
+<h1>Latest Post</h1>
+<ul>
+  {% for post in site.posts  %}
+    {% if forloop.first == true %}  
+      <li>
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt }}</p>
+        </li>
+    {% endif %}
+  {% endfor %}
+</ul>

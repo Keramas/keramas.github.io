@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'InCTF | Rev Challenge: Time'
+date: '2017-12-17T03:40:00.000-08:00'
+author: Keramas
+tags:
+- CTF challenge
+modified_time: '2017-12-17T03:40:11.637-08:00'
+blogger_id: tag:blogger.com,1999:blog-4206503528938574504.post-1936755165805963075
+blogger_orig_url: https://k3ramas.blogspot.com/2017/12/inctf-rev-challenge-time.html
+---
+
+<b>Challenge:</b><br />Time<br /><br /><b>Category</b><br />Rev<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/InCTF/Timechallenge.png?raw=true" /><br /><br />Since this was an ARM file I couldn't find a way to run it on my machine, so I stuck to disassembling the binary file with Binary Ninja.<br /><br />Looking at what was going on, I found a big segment of data that definitely looked like it could be important.<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/InCTF/flaginhex.png?raw=true" /><br /><br />Working backwards from here, it became clear that the function that spits out the flag, uses this data, and looking at the disassembly, you can see that the program is taking each one of these hex values and XORing it with 0x7.<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/InCTF/xoring.png?raw=true" /><br /><br />I created a Python script to do just that:<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/InCTF/timepythonscript.png?raw=true" /><br /><br />Running it we get the flag:<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/InCTF/timeflag.png?raw=true" /><br /><div><br /></div>

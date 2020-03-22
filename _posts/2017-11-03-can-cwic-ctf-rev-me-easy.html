@@ -1,0 +1,13 @@
+---
+layout: post
+title: Can-CWIC CTF | Rev Me Easy
+date: '2017-11-03T12:30:00.004-07:00'
+author: Keramas
+tags:
+- CTF challenge
+modified_time: '2017-11-03T12:30:59.885-07:00'
+blogger_id: tag:blogger.com,1999:blog-4206503528938574504.post-5068992329430100684
+blogger_orig_url: https://k3ramas.blogspot.com/2017/11/can-cwic-ctf-rev-me-easy.html
+---
+
+<b>CTF:</b><br />Can-CWIC CTF<br /><br /><b>Challenge:</b><br />Rev Me Easy<br /><br /><b>Classification:</b><br />Rev<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/Revmeeasy/revmeeasytask.png?raw=true" /><br /><br />Downloading the source code and running objdump on it, we can see the following output:<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/Revmeeasy/xorasmobj1.png?raw=true" /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/Revmeeasy/xorasmobj2.png?raw=true" /><br /><br />Pretty simple to see what's going on here: Hex values are being moved into the edx register and then xor'd with eax, which we can see from the first instruction is 0x10. So let's collect all of these edx values, xor them with 0x10, and see if we get anything interesting to work with.<br /><br />To do this, we can create a simple python script:<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/Revmeeasy/revmepythonsolution.png?raw=true" /><br /><br />Running this we get the following:<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/Revmeeasy/revmeFLAG.png?raw=true" /><br /><br />And that's all she wrote, folks--our flag! Reversing this was indeed easy!<br /><br /><br /><br />

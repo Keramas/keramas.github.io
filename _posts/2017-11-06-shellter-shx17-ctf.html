@@ -1,0 +1,13 @@
+---
+layout: post
+title: Shellter SHX#17 CTF
+date: '2017-11-06T17:59:00.003-08:00'
+author: Keramas
+tags:
+- CTF challenge
+modified_time: '2017-11-06T17:59:49.726-08:00'
+blogger_id: tag:blogger.com,1999:blog-4206503528938574504.post-940988859945108991
+blogger_orig_url: https://k3ramas.blogspot.com/2017/11/shellter-shx17-ctf.html
+---
+
+<b>CTF Name:</b><br />Shellter SHX#17<br /><br /><b>Category</b><br />Forensics<br /><br />This was a series of three different forensic challenges.<br /><br /><b>Challenge #1: Recover</b><br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/forensics_shellter.png?raw=true" /><br /><br />Downloading the challenge file, we can just use strings on it and grep for 'password'.<br />This reveals most of the flag, but using grep again for the content inside the brackets uncovers the entire flag.<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/shellterflag.png?raw=true" /><br /><br /><br /><b>Challenge #2: os.environ.get </b><br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/environget.png?raw=true" /><br /><br />I actually tried to mount and explore this drive image, but it wasn't leading anywhere, so back to strings!<br />I ran strings on the whole drive and exported it into a .txt file, and then started to search for various keywords.<br />Since we know the issue is with os.environ.get, we can assume it has to do with a problem with something related to "PATH=".<br />Searching for this as a keyword, we can find a string of hex characters with a tiny hint that says "HEX2ASCII".<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/pathflagged.png?raw=true" /><br /><br />So, converting from hex to ascii we get our flag!<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/hextoasciiflag.png?raw=true" /><br /><br /><b>Challenge #3: Suspicious Behavior</b><br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/suspiciousbehavior.png?raw=true" /><br /><br />This challenge uses the same drive image as the prior challenge, and I haphazardly came upon this while searching for some keywords. Using "OS=" as a keyword, I found a suspicious string of what looked to me like hexidecimal characters, and sure enough, when converting them into ascii, we got our flag locating the malware!<br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/malwarecoded.png?raw=true" /><br /><br /><img src="https://github.com/Keramas/CTF-Writeups/blob/master/Images/ShellterSHX-17/flagget.png?raw=true" /><br /><div><br /></div>
