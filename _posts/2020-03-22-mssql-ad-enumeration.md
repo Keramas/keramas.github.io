@@ -134,9 +134,8 @@ NEUTRINO\svc_sql
 
 ### Burp plugin overview
 
-<img src = "/assets/images/mssqli-plugin1.png" width='500'>
-<br>
-<img src = "/assets/images/mssqli-plugin2.png" width='500'>
+<img src = "/assets/images/plugin-demo.gif">
+
 
 ## References and shoutouts
 - [https://blog.netspi.com/hacking-sql-server-procedures-part-4-enumerating-domain-accounts/](https://blog.netspi.com/hacking-sql-server-procedures-part-4-enumerating-domain-accounts/)
