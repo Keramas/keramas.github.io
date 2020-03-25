@@ -1,6 +1,6 @@
-- name: Home
+- name: ~/
   link: /
-- name: About Me
+- name: $whoami
   link: /about.html
-- name: All Posts
+- name: $ls -al All-Posts
   link: /blog.html
