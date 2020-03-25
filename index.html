@@ -8,15 +8,14 @@ title: Home
 <img src="/assets/images/banner.gif">
 </center>
 <br>
-<h1>Latest Post</h1>
+<h1>Latest Posts</h1>
 <ul>
-  {% for post in site.posts  %}
-    {% if forloop.first == true %}  
-      <li>
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt }}</p>
-          <P>{{ post.date }}</P>
-        </li>
-    {% endif %}
+  {% for post in site.posts limit:3  %}
+    <li>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+        <P>{{ post.date }}</P>
+      </li>
+
   {% endfor %}
 </ul>
