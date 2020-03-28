@@ -60,7 +60,7 @@ Looking at the `ccheese` user, `512 + 4194304 = 4194816`, meaning a normal accou
 
 After we are finished, we will tear down the linked server and drop the login session to clean up.
 ```sql
-EXEC master.dbo.sp_dropserver @server=N'ADSI', @droplogins='droplogins'
+EXEC master.dbo.sp_dropserver @server=N'DEMO', @droplogins='droplogins'
 ```
 
 Once again, while this is not a new technique or novel knowledge, using native aspects of MSSQL in an offensive manner when your environment is stacked against you, will make the difference between being able to perform follow-up attacks and calling it a day. Now that we have a full, valid list of emails and AD usernames, we can password spray O365 or VPNs to see if any users have weak credentials to allow us to break through the perimeter. 
