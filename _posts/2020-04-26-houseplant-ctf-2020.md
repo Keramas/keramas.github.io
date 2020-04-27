@@ -91,6 +91,8 @@ This results in our flag:
 
 There is not much direction on what we should be looking for in this challenge; however, we do have a bunch of images--A lot of images (411 to be exact.), and other than that, there was not too much additional information that could be gleened from the server. 
 
+<img src = "/assets/images/houseplant/catography_homepage.png">
+
 So the first step is going to be collecting all of these images and exploring their metadata, and parsing through them a bit better for information that could be useful. While the page does not have any kind of indexing on the frontend, which causes the page to just scroll and scroll without any anchor, as well as means to load all the images at once, proxying the traffic through Burp will reveal that there is an API that is accessible. 
 
 <img src = "/assets/images/houseplant/catography_burp_api.png">
