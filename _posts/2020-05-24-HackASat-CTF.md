@@ -10,7 +10,7 @@ This weekend the long-anticipated Hack-A-Sat Space Security Challenge CTF took p
 
 <img src = "/assets/images/hackasat/hackasatctflogo.png">
 
-The challenges were very difficult, but all extremely interesting! I came away learning a TON of information about satellites, aerospace tech, and other really neat stuff. I managed to solve a couple, and wanted to share how a walkthrough of how I did it.
+The challenges were very difficult, but all extremely interesting! I came away learning a TON of information about satellites, aerospace tech, and other really neat stuff. I managed to solve a couple, and wanted to share a walkthrough of how I did it.
 
 # Track The Sat - Ground Segment
 
