@@ -10,7 +10,7 @@ This weekend the long-anticipated Hack-A-Sat Space Security Challenge CTF took p
 
 <img src = "/assets/images/hackasat/hackasatctflogo.png">
 
-The challenges were very difficult, but all extremely interesting stuff! I came away learning a TON of information about satellites, aerospace tech, and other really neat stuff. I managed to solve a couple, and wanted to share how a walkthrough of how I did it.
+The challenges were very difficult, but all extremely interesting! I came away learning a TON of information about satellites, aerospace tech, and other really neat stuff. I managed to solve a couple, and wanted to share how a walkthrough of how I did it.
 
 # Track The Sat - Ground Segment
 
@@ -48,10 +48,10 @@ Additionally, we are provided with a tar file which consists of similar sample c
 
 Based on all of this, we have the following known data points:
 - Our satellite target is COSMOS 2489
-- We know the coordinates of the groundstation, or where are are starting our observation
+- We know the coordinates of the groundstation, or where we are starting our observation
 - We know the start time as well as the end time (start time + 720 seconds)
 
-The system is looking for a solution in the following format, it is a timestamp followed by a pulse width modulation value for the azimuth, and a pulse width for the elevation to set the antenna to the correct position:
+The system is looking for a solution in the following format: it is a timestamp followed by a pulse width modulation value for the azimuth, and a pulse width modulation value for the elevation to set the antenna to the correct position:
 ```
 1586789933.820023, 6001, 2579
 1586789934.820023, 5999, 2581
