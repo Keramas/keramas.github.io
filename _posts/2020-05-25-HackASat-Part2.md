@@ -14,7 +14,7 @@ This was such an awesome challenge--especially due to the nostalgia of it revolv
 
 <img src = "/assets/images/hackasat/56kmodem_challenge.png">
 
-Connecting to the challenge server over the provided IP and port, we are given the following information:
+We are given the following information in a text file:
 
 ```
 ---=== MY SERVER ===---
@@ -49,7 +49,7 @@ Additionally, we are provided with the following .wav file:
 
 Nostalgic sounds!
 
-Before diving into the wav file, we connect to the challenge server and are greeted by a `/dev/ttyACM0`. 
+Connecting to the challenge server over the provided IP and port, we are greeted by a `/dev/ttyACM0`. 
 
 <img src = "/assets/images/hackasat/56kmodem0.png">
 
