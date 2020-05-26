@@ -43,7 +43,7 @@ Password: ?
 
 Additionally, we are provided with the following .wav file: 
 
-![modemwav](https://github.com/Keramas/keramas.github.io/blob/master/assets/images/hackasat/recording.wav)
+![modemwav](https://raw.githubusercontent.com/Keramas/keramas.github.io/master/assets/images/hackasat/recording.wav)
 
 Nostalgic sounds!
 
