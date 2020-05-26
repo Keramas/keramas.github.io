@@ -99,7 +99,7 @@ minimodem -f recording.wav -a 300
 
 <img src = "/assets/images/hackasat/56kmodem5.png">
 
-From the above, we can see the ground station name (`KYGRNDSTTNA8F6CZ9`) as well as what appears to be a username: `rocketman2255`.
+From the above, we can see the ground station name (`GRNDSTTNA8F6CZ9`) as well as what appears to be a username: `rocketman2255`.
 
 Based on the password policy hint and reading the FIPS documentation, the minimum password is a 4-character numeric password. While possible to straight up bruteforce this by iterating through the 10,000 different digit combinations, when connecting to the ground station host, it takes a significant amount of time to establish a connection for each login attempt, and after about 10 tries, the server will drop the connection. 
 
