@@ -14,7 +14,6 @@ This was such an awesome challenge--especially due to the nostalgia of it revolv
 
 <img src = "/assets/images/hackasat/56kmodem_challenge.png">
 
-
 Connecting to the challenge server over the provided IP and port, we are given the following information:
 
 ```
@@ -43,6 +42,8 @@ Password: ?
 ```
 
 Additionally, we are provided with the following .wav file: 
+
+![modemwav](https://github.com/Keramas/keramas.github.io/blob/master/assets/images/hackasat/recording.wav)
 
 Nostalgic sounds!
 
