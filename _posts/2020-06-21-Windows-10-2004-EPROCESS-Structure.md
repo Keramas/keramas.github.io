@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Windows 10 2004 (20H1) Token Stealing Payload and EPROCESS Changes'
-date: '2020-06-22T00:00:00.000-00:00'
+date: '2020-06-21T00:00:00.000-00:00'
 author: Keramas
 tags: [kernel,exploit development]
 ---
