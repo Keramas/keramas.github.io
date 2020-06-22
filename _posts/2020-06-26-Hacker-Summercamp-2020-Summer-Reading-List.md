@@ -3,7 +3,7 @@ layout: post
 title: 'Hacker Summercamp 2020 (Safe Mode) Summer Reading List'
 date: '2020-06-26T00:00:00.000-00:00'
 author: Keramas
-tags: [kernel,exploit development]
+tags: [books,reading]
 ---
 
 Unplugging once in a while is something that can be incredibly difficult to do, especially for those who are professionals in the field yet still continue to hack away during non-work hours out of pure passion. However, the benefits of forcing yourself to get away from your computer, terminal, or whatever you are hacking on, are noticeable and aid in resetting the cache in your brain so it functions better. 
