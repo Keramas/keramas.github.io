@@ -61,7 +61,7 @@ The token can be found at offset `0x4b8` in the EPROCESS structure. The value pr
 
 ## Token Stealing Payload Stub 
 
-To help facilitate kernel exploits being used on multiple versions of Windows 10 x64, I organized some code to dynamically grab payloads for version 1607 - 2004 based on the Windows version detected. 
+To help facilitate kernel exploits being used on multiple versions of Windows 10 x64, I organized some code to dynamically grab payloads for version 1507 - 2004 based on the Windows version detected. 
 
 - https://github.com/Keramas/WindowsKernelExploits/tree/master/shellcode
 
