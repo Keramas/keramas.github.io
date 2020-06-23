@@ -59,6 +59,13 @@ The address used in the image is the address of the System process. The `UniqueP
 
 The token can be found at offset `0x4b8` in the EPROCESS structure. The value present here will then replace the token of the current process in the final instruction of the payload allowing for the escalation of privileges. 
 
+## Token Stealing Payload Stub 
+
+To help facilitate kernel exploits being used on multiple versions of Windows 10 x64, I organized some code to dynamically grab payloads for version 1607 - 2004 based on the Windows version detected. 
+
+- https://github.com/Keramas/WindowsKernelExploits/tree/master/shellcode
+
+
 ## In Summary / TL;DR
 
 - New offsets within EPROCESS structure for Windows 10 2004
