@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Hacker Summercamp 2020 (Safe Mode) Summer Reading List'
-date: '2020-06-26T00:00:00.000-00:00'
+date: '2020-06-23T00:00:00.000-00:00'
 author: Keramas
 tags: [books,reading]
 ---
