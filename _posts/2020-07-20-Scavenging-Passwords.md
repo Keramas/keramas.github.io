@@ -43,12 +43,12 @@ from datetime import datetime
 
 
 def get_args():
-    parser = argparse.ArgumentParser(description="",epilog="")
-    parser.add_argument('-f','--file',type=str, help="data file", required=True)
-    args = parser.parse_args()
-    file = args.file
+	parser = argparse.ArgumentParser(description="",epilog="")
+	parser.add_argument('-f','--file',type=str, help="data file", required=True)
+	args = parser.parse_args()
+	file = args.file
 
-    return file
+	return file
 
 
 def filter(line):
@@ -387,33 +387,33 @@ directory = "/home/keramas/Documents/scavenger_data/files_with_passwords/"
 data_accumulator = dict()
 counter = 1
 for dump_file in os.scandir(directory):
-        
-    with open(dump_file, 'r') as dump:
-        try:
-            dumpline = dump.readline()
-            print(f"Iterating over file {str(dump_file)} #{counter}/17784")
-            while dumpline:
-              
-                try:
-                    dumpline = str(dump.readline()).strip('\n')
-                    with open("/home/keramas/Documents/scavenger_data/service_list.txt", 'r') as service_list:
-                        service = service_list.readline()
-                    
-                        while service:
-                            service = str(service_list.readline()).strip('\n')
-                        
-                            for service in service_list:
-                                count = len(re.findall(service.strip(), dumpline.strip(), re.IGNORECASE))
-                                if service.strip() in data_accumulator:
-                                    data_accumulator[service.strip()] += count
-                                else:
-                                    data_accumulator[service.strip()] = count
-                except:
-                    pass
-        except:
-            pass
-    counter += 1
-    
+		
+	with open(dump_file, 'r') as dump:
+		try:
+			dumpline = dump.readline()
+			print(f"Iterating over file {str(dump_file)} #{counter}/17784")
+			while dumpline:
+			  
+				try:
+					dumpline = str(dump.readline()).strip('\n')
+					with open("/home/keramas/Documents/scavenger_data/service_list.txt", 'r') as service_list:
+						service = service_list.readline()
+					
+						while service:
+							service = str(service_list.readline()).strip('\n')
+						
+							for service in service_list:
+								count = len(re.findall(service.strip(), dumpline.strip(), re.IGNORECASE))
+								if service.strip() in data_accumulator:
+									data_accumulator[service.strip()] += count
+								else:
+									data_accumulator[service.strip()] = count
+				except:
+					pass
+		except:
+			pass
+	counter += 1
+	
 print(data_accumulator)
 ```
 Based on the returned dictionary output, this was placed through another Python script to generate a word map to illustrate the frequency of the online services.
@@ -428,7 +428,7 @@ Iterating over file <DirEntry 'b5XFaBMM_pastebincom'> #5/17784
 Iterating over file <DirEntry '6biAXZEY_pastebincom'> #6/17784
 [SNIP]
 Iterating over file <DirEntry 'qr38piad_pastebincom'> #17784/17784
-{'Tmall': 150, 'Facebook': 2361, 'Baidu': 26, 'Tencent': 39, 'Sohu': 202, 'Taobao': 84, 'Haosou': 1, 'Yahoo!': 10, 'Jingdong': 0, 'Wikipedia': 276, 'Amazon': 22876, 'Sina': 7778, 'Windows': 6209, 'Reddit': 109, 'Netflix': 16773, 'Zoom': 2023, 'Xinhua': 17, 'Okezone': 2, 'Blogspot': 412, 'Microsoft': 2388, 'VK': 7397, 'CSDN': 15, 'Instagram': 1502, 'Alipay': 29, 'Twitch': 184, 'Bing': 2858, 'Google': 42758, 'BongaCams': 0, 'LiveJasmin': 3, 'Tribun': 78, 'Panda': 4023, 'Twitter': 7430, 'Zhanqi': 1, 'Worldometer': 0, 'Stack': 6158, 'Naver': 3375, 'Tianya': 41, 'AliExpress': 25, 'eBay': 793, 'Mama': 7266, 'Spotify': 94017, 'Riot': 2432, 'battle.net': 443, 'Blizzard': 342, 'Roblox': 18447, 'Origin': 8231, 'Steam': 2178}
+{'Tmall': 150, 'Facebook': 2361, 'Baidu': 26, 'Tencent': 39, 'Sohu': 202, 'Taobao': 84, 'Haosou': 1, 'Yahoo!': 10, 'Jingdong': 0, 'Wikipedia': 276, 'Amazon': 22876, 'Sina': 7778, 'Windows': 6209, 'Reddit': 109, 'Netflix': 16773, 'Zoom': 2023, 'Xinhua': 17, 'Okezone': 2, 'Blogspot': 412, 'Microsoft': 2388, 'VK': 7397, 'CSDN': 15, 'Instagram': 1502, 'Alipay': 29, 'Twitch': 184, 'Bing': 2858, 'Google': 42758, 'BongaCams': 0, 'LiveJasmin': 3, 'Tribun': 78, 'Panda': 4023, 'Twitter': 7430, 'Zhanqi': 1, 'Worldometer': 0, 'Stack': 6158, 'Naver': 3375, 'Tianya': 41, 'AliExpress': 25, 'eBay': 793, 'Mama': 7266, 'Spotify': 94017, 'Riot': 2432, 'battle.net': 443, 'Blizzard': 342, 'Roblox': 18447, 'Origin': 8231, 'Steam': 2178, 'Disney': 16586}
 ```
 
 ```python
@@ -437,15 +437,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from PIL import Image
 
-data_dict = {'Tmall': 150, 'Facebook': 2361, 'Baidu': 26, 'Tencent': 39, 'Sohu': 202, 'Taobao': 84, 'Haosou': 1, 'Yahoo!': 10, 'Jingdong': 0, 'Wikipedia': 276, 'Amazon': 22876, 'Sina': 7778, 'Windows': 6209, 'Reddit': 109, 'Netflix': 16773, 'Zoom': 2023, 'Xinhua': 17, 'Okezone': 2, 'Blogspot': 412, 'Microsoft': 2388, 'VK': 7397, 'CSDN': 15, 'Instagram': 1502, 'Alipay': 29, 'Twitch': 184, 'Bing': 2858, 'Google': 42758, 'BongaCams': 0, 'LiveJasmin': 3, 'Tribun': 78, 'Panda': 4023, 'Twitter': 7430, 'Zhanqi': 1, 'Worldometer': 0, 'Stack': 6158, 'Naver': 3375, 'Tianya': 41, 'AliExpress': 25, 'eBay': 793, 'Mama': 7266, 'Spotify': 94017, 'Riot': 2432, 'battle.net': 443, 'Blizzard': 342, 'Roblox': 18447, 'Origin': 8231, 'Steam': 2178}
+data_dict = {'Tmall': 150, 'Facebook': 2361, 'Baidu': 26, 'Tencent': 39, 'Sohu': 202, 'Taobao': 84, 'Haosou': 1, 'Yahoo!': 10, 'Jingdong': 0, 'Wikipedia': 276, 'Amazon': 22876, 'Sina': 7778, 'Windows': 6209, 'Reddit': 109, 'Netflix': 16773, 'Zoom': 2023, 'Xinhua': 17, 'Okezone': 2, 'Blogspot': 412, 'Microsoft': 2388, 'VK': 7397, 'CSDN': 15, 'Instagram': 1502, 'Alipay': 29, 'Twitch': 184, 'Bing': 2858, 'Google': 42758, 'BongaCams': 0, 'LiveJasmin': 3, 'Tribun': 78, 'Panda': 4023, 'Twitter': 7430, 'Zhanqi': 1, 'Worldometer': 0, 'Stack': 6158, 'Naver': 3375, 'Tianya': 41, 'AliExpress': 25, 'eBay': 793, 'Mama': 7266, 'Spotify': 94017, 'Riot': 2432, 'battle.net': 443, 'Blizzard': 342, 'Roblox': 18447, 'Origin': 8231, 'Steam': 2178, 'Disney': 16586}
+
 
 service_names = ''
 stopwords = set(STOPWORDS)
 
 wordcloud = WordCloud(width = 800, height = 800, 
-                background_color ='white', 
-                stopwords = stopwords, 
-                min_font_size = 10).generate_from_frequencies(data_dict) 
+				background_color ='white', 
+				stopwords = stopwords, 
+				min_font_size = 10).generate_from_frequencies(data_dict) 
   
 plt.figure(figsize = (8, 8), facecolor = None) 
 plt.imshow(wordcloud) 
@@ -454,7 +455,6 @@ plt.tight_layout(pad = 0)
   
 plt.show() 
 ```
-
 <img src = "/assets/images/scavenger/service_wordcloud.png">
 
 People sure seem to be gunning for that free Spotify this past year! 
