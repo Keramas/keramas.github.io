@@ -246,7 +246,7 @@ Password length (length ordered)
 25 = 1131 (0.04%)
 
 One to six characters = 338305 (11.38%)
-One to eight characters = 1436901 (48.31'%)
+One to eight characters = 1436901 (48.31%)
 More than eight characters = 1537203 (51.69%)
 
 Only lowercase alpha = 408594 (13.74%)
