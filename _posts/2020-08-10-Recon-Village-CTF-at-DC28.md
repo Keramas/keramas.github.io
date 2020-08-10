@@ -18,7 +18,7 @@ http://159.65.106.65/index.php?file=test
 
 Inspecting the source code reveals a couple of clues--namely that this application is based on a Docker image hosted on Gcloud.
 
-```
+```html
     <center>
         <h1>Hybrid Awesome App</h1>
         <!-- Built with love using Docker -->
@@ -139,7 +139,7 @@ index 3d7addf..0f47c02 100644
 
 Now taking these keys and using it with aws-cli tools, we can query AWS to determine what these credentials are for.
 
-```
+```json
 # aws sts get-caller-identity
 {
     "UserId": "AIDAXMXLEAVVNPZ2QUKVR",
@@ -150,7 +150,7 @@ Now taking these keys and using it with aws-cli tools, we can query AWS to deter
 
 Looking at the "read-param" username, it's a good bet that this key pair had some kind of read privileges for parameters in AWS SSM. Taking a look at the parameters present reveals  "/prod/ctf/flag".
 
-```
+```json
 # aws ssm describe-parameters --region us-east-1
 {
     "Parameters": [
@@ -169,7 +169,7 @@ Looking at the "read-param" username, it's a good bet that this key pair had som
 ```
 A final query can then be made to read the parameter, which at long last gives the flag!
 
-```
+```json
 # aws ssm get-parameters --name /prod/ctf/flag --region us-east-1
 {
     "Parameters": [
