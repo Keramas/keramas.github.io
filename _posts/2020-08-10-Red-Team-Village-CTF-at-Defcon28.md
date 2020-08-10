@@ -70,7 +70,6 @@ Unfortunately for Samir, this repo leaks AWS credentials.
 
 Using this information, it was then possible to access an Initech AWS S3 bucket which contained several files, including an VPN configuration file.
 
-
 ### Michael - https://github.com/michaelbolton1
 
 This repository had a .tar file which contained source code for what appeared to be an internal application. 
@@ -208,11 +207,11 @@ We definitely hit some walls which caused a bottleneck, but we managed to make a
 
 ## Lessons learned and considerations for participating in future CTFs like this
 
-Heading into the CTF the plan was the have a dedicated host for a communal C2 server, take time and log all bits of data, and stay super structured. A couple of hours into the competition I was reminded of a wise Snart talking to Flash about plans...
+Heading into the CTF, the plan was to have a dedicated host for a communal C2 server, take time and log all bits of data, and stay super structured. A couple of hours into the competition I was reminded of a wise Snart talking to Flash about plans...
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/00RIkdLPqAs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The structure started to collapse a bit after a certain point with several C2 servers and it became harder to track all data for several reasons (lack of communication, etc.), so a couple takeaways for next time would definitely be:
+The structure started to collapse a bit after a certain point with several C2 servers being stood up, and it became harder to track all data for several reasons (lack of communication, etc.), so a couple takeaways for next time would definitely be:
 
 - Too many cooks in the kitchen is a real thing. Splitting the team into dedicated groups based on specialities or tasks is likely the way to go. While this is often the case for a real red team operation, when you only have 24 hrs and it's a time-attack type of deal, it makes it difficult because there is the notion to go as fast as possible. A good balance of this would be optimal.
 
