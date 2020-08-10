@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'Recon Village CTF @ DC28 - Hybrid Application Challenge'
+title: 'Recon Village CTF @ DC28 - Hybrid Awesome App Challenge'
 date: '2020-08-10T00:00:00.000-00:00'
-author: Keramas on behalf of all of Neutrino Cannon
+author: Keramas
 tags: [ctf, defcon28, defconsafemode, reconvillage]
 ---
 
