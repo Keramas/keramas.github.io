@@ -53,7 +53,7 @@ To give an idea of the phone tree structure, the following is a map:
 Generally, each path led to different flags in the form of a recorded message from a very robotic voice. To give an idea, the following is a sample flag:
 
 <audio controls>
-  <source src="https://raw.githubusercontent.com/Keramas/keramas.github.io/master/assets/images/hackasat/phonetree.wav" type="audio/wav">
+  <source src="https://raw.githubusercontent.com/Keramas/keramas.github.io/master/assets/images/hackasat/phonetree.mp3" type="audio/mp3">
 </audio>
 
 It took a combination of listening a million times and guessing in order to submit these flags. 
