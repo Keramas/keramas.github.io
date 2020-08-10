@@ -109,11 +109,21 @@ Once accessing the internal network via VPN, your standard network enumeration w
 
 ## Exploit, pillage, and plunder
 
-The 10.0.10.0/24 had a variety of web-based hosts ripe for exploitation, as well as a mailserver with a web portal. 
+The 10.0.10.0/24 had a variety of web-based hosts ripe for exploitation, as well as a mailserver with a web portal.
 
-This was full of custom exploitation of a host due to the aforementioned vulnerability found in the leaked source code, compromising a WordPress host due to weak/leaked credentials, and some RCE through uploading + LFI fun, which led to the dumping of a employee records containing several hashed passwords which cracked for users within the network. 
+There were three web hosts. The site on 10.0.10.11 was vulnerabile to both SQLi and LFI. The SQLi provided a dumping of a employee records containing several hashed passwords which cracked for users within the network.
+
+<img src = "/assets/images/redteamctfdc28/slqi.png">
 
 <img src = "/assets/images/redteamctfdc28/database.png">
+
+10.0.10.12 hosted a Wordpress blog. Once creds were obtained, it was possible to get a shell and flags from that box as well.
+
+10.0.10.13 hosted the application that used leaked source code, and while the site says it was made by Milton, that was a bit of misdirection. This was one of the sticking points as we missed Michael's repo during recon and had to backtrack a bit.
+
+<img src = "/assets/images/redteamctfdc28/milton.png">
+
+The vulnerability identifed in the leaked source code was leveraged to gain a shell on the system through code injection. 
 
 Mailboxes always present a wealth of information when accessed, and using each of the credentials obtained via exploitation efforts to raid user's inboxes yielded a lot of additional flags by checking out Docker images, inspecting attached documents, and other key information.
 
