@@ -32,7 +32,7 @@ The finals lasted another 24 hours, and each qualifying team was given a VPN con
 
 For the sake of brevity and to also focus on the unique aspects of this CTF, I am going to skip over the qualifiers. There are number of write-ups available for past jeopardy-style Red Team Village CTFs, so it shouldn't be too hard to research details if you are interested in that. 
 
-We had 24 hours to gather as much information we could find about our target, Initech (initech.business) and their employees. This organizers chose the classic movie Office Space as the theme, and it made for a really great time with the humor! 
+We had 24 hours to gather as much information we could find about our target, Initech (initech.business) and their employees. The organizers chose the classic movie Office Space as the theme, and it made for a really great time with the humor! 
 
 For those new to OSINT and passive target recon prior to actual active breaching and such, this involves scraping usernames/emails from LinkedIn, searching for public code respositories, open cloud storage, and gathering other potentially useful details on employess via social media and other sources.
 
