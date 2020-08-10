@@ -48,7 +48,7 @@ A good clue is also present on the /info.php page:
 
 <img src = "/assets/images/reconvillagedc28/rtfm.png">
 
-This is definitely a hint to read about GCR Docker authentication, which points to the fact that the authentication key should be in .docker/config.json. Looking at the /etc/passwd entry, we have the Automator user which is used for Ansible, GCR, and other things, so their home directory is a good candidate. Using the LFI to test this out, it was possible to retrieve the auth file.
+This is definitely a hint to read about GCR Docker authentication, which points to the fact that the authentication key should be in `.docker/config.json`. Looking at the `/etc/passwd` entry, we have the Automator user which is used for Ansible, GCR, and other things, so their home directory is a good candidate. Using the LFI to test this out, it was possible to retrieve the auth file.
 
 ```
 http://159.65.106.65/index.php?file=..././..././..././..././..././..././home/automator/.docker/config.json
@@ -80,7 +80,7 @@ Now that we are authenticated, the Docker image can be pulled:
 docker pull recon-285218/recon-code
 ```
 
-While possible to explore from the outside with a tool like Dive, I hopped into it with `docker un -it <image> sh`, and within the image was an `app` folder containing a git repo.
+Hopping into the image with `docker run -it <image> sh`, there was an `app` folder containing a git repo.
 
 Using `git log` we can see the change history which mentions env variables, which can contain keys for AWS or other key data.
 
