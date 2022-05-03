@@ -205,7 +205,7 @@ The core takeaways from this analysis are the following:
 1. If you know the length of the password, you can determine the starting point for the algorithm's core math functionality as you will know the order to follow for the prime number multiplication.
 2. The transformation of a character via the algorithm is dependent upon its neighboring value.
 
-Due to the multiples-of-three array (the "padding") that is overwritten via the algorithm, it is possible to then determine the length of a password up to a length of 15 based solely by how much of the original array is remaining in the hash. For example, for an 8-character password, there will be 16 bytes of the original array. The red box is the password, followed by the remaining bytes of the original multiples of three array:
+Due to the multiples-of-three array (the "padding") that is overwritten via the algorithm, it is possible to then determine the length of a password up to a length of 15 based solely by how much of the original array is remaining in the hash. For example, for an 8-character password, there will be 8 bytes of the original array. The red box is the password, followed by the remaining bytes of the original multiples of three array:
 
 <center><img src = "/assets/images/rollyourown/eightcharpass.png"></center>
 
