@@ -65,31 +65,18 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-<<<<<<< HEAD
     mercenary (0.4.0)
-=======
-    mercenary (0.3.6)
->>>>>>> ee453de6d20fc42a7307a122ade7b46295b5201b
-    mini_portile2 (2.8.0)
-    nokogiri (1.13.4)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-<<<<<<< HEAD
     public_suffix (4.0.7)
     racc (1.6.0)
     rainbow (3.1.1)
     rb-fsevent (0.11.1)
-=======
-    public_suffix (4.0.6)
-    racc (1.6.0)
-    rainbow (3.0.0)
-    rb-fsevent (0.10.4)
->>>>>>> ee453de6d20fc42a7307a122ade7b46295b5201b
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.3.1)
@@ -123,7 +110,7 @@ GEM
     yell (2.2.2)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   html-proofer (~> 3.0)
@@ -135,4 +122,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.1.4
+   2.3.12
