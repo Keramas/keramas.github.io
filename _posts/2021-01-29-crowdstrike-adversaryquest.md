@@ -6,7 +6,7 @@ author: Keramas
 tags: [ctf]
 ---
 
-CrowdStike held a really great CTF the other week that just ended which incorporated a blend of reversing, binary exploitation, cryptography, and other skills over 12 different challenges with the goal to 'catch' three different adversary groups.
+CrowdStrike held a really great CTF the other week that just ended which incorporated a blend of reversing, binary exploitation, cryptography, and other skills over 12 different challenges with the goal to 'catch' three different adversary groups.
 
 <center><img src = "/assets/images/adversaryquest/adversaries.png"></center>
 
